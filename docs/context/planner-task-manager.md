@@ -49,3 +49,12 @@
 - Pending Actions:
   - None.
 - Status: completed (2025-12-24T23:59:07-08:00)
+
+## 2025-12-25 — README linking
+- Summary: Make README a hub linking users into deeper documentation.
+- Details:
+  - Updated README_SPEC to emphasize README as entry and link to docs/usage.md; regenerated README.md accordingly.
+- Related Spec / Skill: n/a
+- Pending Actions:
+  - None.
+- Status: completed (2025-12-25T00:03:14-08:00)

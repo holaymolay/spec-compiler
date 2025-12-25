@@ -9,13 +9,14 @@ audience:
     - "Teams seeking automatic requirement generation or creative drafting."
     - "Workflows that allow LLMs or tools to fill in missing decisions implicitly."
 problem_statement: "Specs generated with ad hoc prompts or LLM retries drift, hide assumptions, and cannot be audited or trusted for downstream automation."
-solution_summary: "A compiler-style CLI with hard stage gates (intent capture, clarification, normalization, validation, prompt synthesis) that refuses to proceed on missing decisions, enforces governance rules mechanically, and emits Codex-ready prompts only after deterministic checks pass."
+solution_summary: "A compiler-style CLI with hard stage gates (intent capture, clarification, normalization, validation, prompt synthesis) that refuses to proceed on missing decisions, enforces governance rules mechanically, and emits Codex-ready prompts only after deterministic checks pass. Entry point: README.md (you are here); drill-down runbook: docs/usage.md."
 outcomes:
   - "Capture raw human intent without normalization or enrichment."
   - "Surface missing decisions as deterministic blocking questions until resolved."
   - "Normalize clarified intent into governed specs with traceable validation and security defaults."
   - "Validate specs against non-negotiable rules and synthesize Codex prompts only on passing validation."
   - "Document how to operate the pipeline (local or CI) without LLMs or implicit assumptions."
+  - "Guide users from README.md into detailed docs/usage.md for step-by-step execution."
 quick_start:
   - "npm install"
   - "npm run build"
@@ -23,6 +24,8 @@ quick_start:
   - "node dist/cli.js clarify"
   - "node dist/cli.js normalize --spec-id <id> && node dist/cli.js validate --spec-id <id> && node dist/cli.js synthesize --spec-id <id>"
 repo_map:
+  - path: "README.md"
+    description: "Start here; links into docs/usage.md for full pipeline walkthrough."
   - path: "README_SPEC.yaml"
     description: "Authoritative input for README generation via readme-spec-engine."
   - path: "src/"
@@ -34,7 +37,7 @@ repo_map:
   - path: "runs/"
     description: "Run receipts captured per task."
   - path: "docs/context/"
-    description: "Agent context ledgers per governance workflow."
+    description: "Agent context ledgers per governance workflow (see also docs/usage.md for operational steps)."
   - path: "todo.md"
     description: "AI-managed task list; populate via todo-inbox.md."
   - path: "backlog.md"

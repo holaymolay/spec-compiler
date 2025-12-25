@@ -11,3 +11,6 @@
 - Removed business-specific intent/clarification artifacts and added ignores for compiler outputs to keep the repository framework-only. (ledger: 2025-12-24 — Framework sanitization; run: run-2025-12-24-clean)
 - Authored README_SPEC.yaml, vendored readme-spec-engine spec defaults, and generated validated README.md. (ledger: 2025-12-24 — README generation; run: run-2025-12-24-readme)
 - Hardened documentation with explicit usage guide and regenerated README to be step-by-step for new users. (ledger: 2025-12-24 — Documentation hardening; run: run-2025-12-24-docs)
+
+## 2025-12-25
+- Made README the navigation hub, linking to docs/usage.md and clarifying the entrypoint role. (ledger: 2025-12-25 — README linking; run: run-2025-12-25-readme-links)

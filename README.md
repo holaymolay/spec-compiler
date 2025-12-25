@@ -21,7 +21,7 @@ Specs generated with ad hoc prompts or LLM retries drift, hide assumptions, and 
 
 ## Solution
 
-A compiler-style CLI with hard stage gates (intent capture, clarification, normalization, validation, prompt synthesis) that refuses to proceed on missing decisions, enforces governance rules mechanically, and emits Codex-ready prompts only after deterministic checks pass.
+A compiler-style CLI with hard stage gates (intent capture, clarification, normalization, validation, prompt synthesis) that refuses to proceed on missing decisions, enforces governance rules mechanically, and emits Codex-ready prompts only after deterministic checks pass. Entry point: README.md (you are here); drill-down runbook: docs/usage.md.
 
 ## Outcomes
 
@@ -32,6 +32,7 @@ Expected outcomes:
 - Normalize clarified intent into governed specs with traceable validation and security defaults.
 - Validate specs against non-negotiable rules and synthesize Codex prompts only on passing validation.
 - Document how to operate the pipeline (local or CI) without LLMs or implicit assumptions.
+- Guide users from README.md into detailed docs/usage.md for step-by-step execution.
 
 ## Quick Start
 
@@ -47,12 +48,13 @@ Run these steps:
 
 | Path | Description | Exists |
 | --- | --- | --- |
+| README.md | Start here; links into docs/usage.md for full pipeline walkthrough. | yes |
 | README_SPEC.yaml | Authoritative input for README generation via readme-spec-engine. | yes |
 | src/ | TypeScript sources for the compiler stages and CLI entrypoint. | yes |
 | config/framework.yaml | Framework concepts, synchronizations, and security defaults. | yes |
 | scripts/ | Run-record helpers for deterministic audit logs. | yes |
 | runs/ | Run receipts captured per task. | yes |
-| docs/context/ | Agent context ledgers per governance workflow. | yes |
+| docs/context/ | Agent context ledgers per governance workflow (see also docs/usage.md for operational steps). | yes |
 | todo.md | AI-managed task list; populate via todo-inbox.md. | yes |
 | backlog.md | AI-managed backlog of future work. | yes |
 | completed.md | AI-managed log of completed tasks. | yes |
