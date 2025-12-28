@@ -1,0 +1,11 @@
+{
+  "id": "intent-123",
+  "version": "1.0.0",
+  "density": {
+    "max_interactions_per_view": 8
+  },
+  "allowed_patterns": {
+    "hero.section": ["landing"],
+    "cta.button": ["acquisition"]
+  }
+}

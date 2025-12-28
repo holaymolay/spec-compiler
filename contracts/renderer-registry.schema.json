@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Renderer Registry",
+  "type": "object",
+  "properties": {
+    "registry_version": { "type": "string", "minLength": 1 },
+    "renderers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rendererEntry" }
+    }
+  },
+  "required": ["registry_version", "renderers"],
+  "additionalProperties": false,
+  "$defs": {
+    "rendererEntry": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "target": { "type": "string", "minLength": 1 },
+        "contract_id": { "type": "string", "minLength": 1 }
+      },
+      "required": ["name", "version", "target", "contract_id"],
+      "additionalProperties": false
+    }
+  }
+}

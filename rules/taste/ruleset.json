@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "typography.max-sizes.rule",
+      "description": "Fails when typography uses more font sizes than the constitution allows.",
+      "clause": "constitution.typography.max_font_sizes",
+      "intent_reference": "manifest.taste.typography",
+      "remediation": "Reduce font size variants to the maximum allowed and reuse existing roles."
+    },
+    {
+      "id": "typography.hierarchy.rule",
+      "description": "Fails when typography roles violate the declared hierarchy ranges.",
+      "clause": "constitution.typography.roles",
+      "intent_reference": "manifest.taste.typography",
+      "remediation": "Align role sizes to the allowed min/max per hierarchy level."
+    },
+    {
+      "id": "spacing.allowed-values.rule",
+      "description": "Fails when spacing values are not enumerated by the constitution.",
+      "clause": "constitution.spacing.allowed_values",
+      "intent_reference": "manifest.taste.spacing",
+      "remediation": "Use only constitution-approved spacing tokens."
+    },
+    {
+      "id": "spacing.variance.rule",
+      "description": "Fails when spacing variance exceeds the allowed range.",
+      "clause": "constitution.spacing.max_variance",
+      "intent_reference": "manifest.taste.spacing",
+      "remediation": "Normalize spacing values to keep variance within the allowed limit."
+    },
+    {
+      "id": "color.allowed.rule",
+      "description": "Fails when undeclared or unauthorized colors are used.",
+      "clause": "constitution.color.allowed_tokens",
+      "intent_reference": "manifest.taste.color",
+      "remediation": "Map all colors to allowed tokens from the constitution."
+    },
+    {
+      "id": "color.contrast.rule",
+      "description": "Fails when contrast ratios fall below the constitution floor.",
+      "clause": "constitution.color.contrast_floor",
+      "intent_reference": "manifest.taste.color",
+      "remediation": "Increase contrast or adjust palette to meet the minimum ratio."
+    },
+    {
+      "id": "density.limit.rule",
+      "description": "Fails when interaction density exceeds intent limits.",
+      "clause": "intent.density.max_interactions_per_view",
+      "intent_reference": "design_intent.density",
+      "remediation": "Reduce interactions per view to align with design intent density limits."
+    },
+    {
+      "id": "consistency.allowed.rule",
+      "description": "Fails when radius, elevation, or motion values are outside allowed sets.",
+      "clause": "constitution.consistency",
+      "intent_reference": "manifest.taste.consistency",
+      "remediation": "Use only allowed radius, elevation, and motion values from the constitution."
+    },
+    {
+      "id": "consistency.variance.rule",
+      "description": "Fails when radius/elevation/motion variance exceeds limits.",
+      "clause": "constitution.consistency.*.max_variance",
+      "intent_reference": "manifest.taste.consistency",
+      "remediation": "Tighten component values to keep variance under the allowed maximum."
+    },
+    {
+      "id": "patterns.intent.rule",
+      "description": "Fails when patterns are used outside allowed intent scopes.",
+      "clause": "constitution.patterns",
+      "intent_reference": "design_intent.allowed_patterns",
+      "remediation": "Align pattern usage with intents permitted by design intent and constitution."
+    }
+  ]
+}

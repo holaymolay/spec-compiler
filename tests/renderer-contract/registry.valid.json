@@ -1,0 +1,11 @@
+{
+  "registry_version": "1.0.0",
+  "renderers": [
+    {
+      "name": "example-renderer",
+      "version": "0.1.0",
+      "target": "html",
+      "contract_id": "renderer-contract-v1"
+    }
+  ]
+}

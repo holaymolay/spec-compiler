@@ -10,13 +10,15 @@
     "build": "tsc -p tsconfig.json",
     "clean": "rm -rf dist",
     "lint": "echo \"Linting not yet configured\"",
-    "start": "node dist/cli.js"
+    "start": "node dist/cli.js",
+    "test": "ts-node scripts/renderer-contract.tests.ts && ts-node scripts/taste.tests.ts"
   },
   "type": "commonjs",
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
+    "ajv": "^8.17.1",
     "commander": "^11.1.0",
     "js-yaml": "^4.1.0"
   },

@@ -4,6 +4,8 @@ import { runIntent, IntentOptions } from "./stages/intent";
 import { runClarify, ClarifyOptions } from "./stages/clarify";
 import { runNormalize, NormalizeOptions } from "./stages/normalize";
 import { runValidate, ValidateOptions } from "./stages/validate";
+import { runRendererValidate, RendererValidateOptions } from "./stages/renderer-validate";
+import { runTaste, TasteOptions } from "./stages/taste";
 import { runSynthesize, SynthesizeOptions } from "./stages/synthesize";
 import packageJson from "../package.json";
 
@@ -48,6 +50,26 @@ program
   .description("Validate specs against hard governance rules.")
   .option("--spec-id <id>", "Spec ID to validate (defaults to active normalized spec).")
   .action(handleAction<ValidateOptions>(runValidate));
+
+program
+  .command("renderer-validate")
+  .description("Validate renderer outputs against the renderer contract.")
+  .option("--manifest <path>", "Path to renderer output manifest (defaults to renderers/manifest.json).")
+  .option("--registry <path>", "Path to renderer registry (defaults to config/renderer-registry.json).")
+  .option("--report <path>", "Path for renderer validation report (defaults to validation/renderer-report.json).")
+  .action(handleAction<RendererValidateOptions>(runRendererValidate));
+
+program
+  .command("taste")
+  .description("Enforce taste rules against renderer outputs and visual constitution.")
+  .option("--manifest <path>", "Path to renderer output manifest (defaults to renderers/manifest.json).")
+  .option("--constitution <path>", "Path to visual constitution (defaults to config/visual-constitution.json).")
+  .option("--intent <path>", "Path to design intent (defaults to config/design-intent.json).")
+  .option("--ruleset <path>", "Path to taste ruleset (defaults to rules/taste/ruleset.json).")
+  .option("--report <path>", "Path for taste validation report (defaults to validation/taste-report.json).")
+  .option("--verbose", "Evaluate all rules even if failures occur.")
+  .option("--no-fail-fast", "Do not stop on first failure (default is fail fast).")
+  .action(handleAction<TasteOptions>(runTaste));
 
 program
   .command("synthesize")

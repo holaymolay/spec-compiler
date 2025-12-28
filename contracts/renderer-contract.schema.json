@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Renderer Output Manifest",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "contract": { "$ref": "#/$defs/contract" },
+    "renderer": { "$ref": "#/$defs/renderer" },
+    "inputs": { "$ref": "#/$defs/inputs" },
+    "outputs": { "$ref": "#/$defs/outputs" },
+    "taste": { "$ref": "#/$defs/taste" },
+    "generated_at": { "type": "string", "minLength": 1 },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["contract", "renderer", "inputs", "outputs", "taste"],
+  "additionalProperties": false,
+  "$defs": {
+    "contract": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 }
+      },
+      "required": ["id", "version"],
+      "additionalProperties": false
+    },
+    "renderer": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "target": { "type": "string", "minLength": 1 },
+        "declares_contract": { "type": "string", "minLength": 1 }
+      },
+      "required": ["name", "version", "target", "declares_contract"],
+      "additionalProperties": false
+    },
+    "immutableReference": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "checksum": { "type": "string", "minLength": 1 }
+      },
+      "required": ["id", "version", "checksum"],
+      "additionalProperties": false
+    },
+    "versionedReference": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "checksum": { "type": "string", "minLength": 1 }
+      },
+      "required": ["id", "version"],
+      "additionalProperties": false
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "design_intent": { "$ref": "#/$defs/immutableReference" },
+        "visual_constitution": { "$ref": "#/$defs/versionedReference" },
+        "pattern_registries": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/versionedReference" }
+        }
+      },
+      "required": ["design_intent", "visual_constitution"],
+      "additionalProperties": false
+    },
+    "artifact": {
+      "type": "object",
+      "properties": {
+        "format": { "type": "string", "minLength": 1 },
+        "uri": { "type": "string", "minLength": 1 },
+        "checksum": { "type": "string", "minLength": 1 }
+      },
+      "required": ["format", "uri"],
+      "additionalProperties": false
+    },
+    "outputs": {
+      "type": "object",
+      "properties": {
+        "artifact": { "$ref": "#/$defs/artifact" },
+        "token_usage": {
+          "type": "object",
+          "properties": {
+            "declared": { "type": "array", "items": { "type": "string" } },
+            "undeclared": { "type": "array", "items": { "type": "string" } }
+          },
+          "required": ["declared", "undeclared"],
+          "additionalProperties": false
+        },
+        "pattern_usage": {
+          "type": "object",
+          "properties": {
+            "declared": { "type": "array", "items": { "type": "string" } }
+          },
+          "required": ["declared"],
+          "additionalProperties": false
+        },
+        "constitution": {
+          "type": "object",
+          "properties": {
+            "violations": { "type": "array", "items": { "type": "string" } }
+          },
+          "required": ["violations"],
+          "additionalProperties": false
+        },
+        "determinism": {
+          "type": "object",
+          "properties": {
+            "deterministic": { "type": "boolean" },
+            "markers": { "type": "array", "items": { "type": "string" } }
+          },
+          "required": ["deterministic", "markers"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["artifact", "token_usage", "pattern_usage", "constitution", "determinism"],
+      "additionalProperties": false
+    },
+    "tasteTypography": {
+      "type": "object",
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": { "type": "string", "minLength": 1 },
+              "size": { "type": "number" }
+            },
+            "required": ["role", "size"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["roles"],
+      "additionalProperties": false
+    },
+    "tasteSpacing": {
+      "type": "object",
+      "properties": {
+        "values": { "type": "array", "items": { "type": "number" } }
+      },
+      "required": ["values"],
+      "additionalProperties": false
+    },
+    "tasteColor": {
+      "type": "object",
+      "properties": {
+        "tokens": { "type": "array", "items": { "type": "string" } },
+        "contrast": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pair": { "type": "string", "minLength": 1 },
+              "ratio": { "type": "number" }
+            },
+            "required": ["pair", "ratio"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["tokens", "contrast"],
+      "additionalProperties": false
+    },
+    "tasteDensity": {
+      "type": "object",
+      "properties": {
+        "interactions_per_view": { "type": "number" }
+      },
+      "required": ["interactions_per_view"],
+      "additionalProperties": false
+    },
+    "tasteConsistency": {
+      "type": "object",
+      "properties": {
+        "radius": { "type": "array", "items": { "type": "number" } },
+        "elevation": { "type": "array", "items": { "type": "number" } },
+        "motion": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["radius", "elevation", "motion"],
+      "additionalProperties": false
+    },
+    "tastePatterns": {
+      "type": "object",
+      "properties": {
+        "usage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pattern": { "type": "string", "minLength": 1 },
+              "intent": { "type": "string", "minLength": 1 }
+            },
+            "required": ["pattern", "intent"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["usage"],
+      "additionalProperties": false
+    },
+    "taste": {
+      "type": "object",
+      "properties": {
+        "typography": { "$ref": "#/$defs/tasteTypography" },
+        "spacing": { "$ref": "#/$defs/tasteSpacing" },
+        "color": { "$ref": "#/$defs/tasteColor" },
+        "density": { "$ref": "#/$defs/tasteDensity" },
+        "consistency": { "$ref": "#/$defs/tasteConsistency" },
+        "patterns": { "$ref": "#/$defs/tastePatterns" }
+      },
+      "required": ["typography", "spacing", "color", "density", "consistency", "patterns"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "contract": { "id": "renderer-contract-v1", "version": "1.0.0" },
+  "renderer": {
+    "name": "example-renderer",
+    "version": "0.1.0",
+    "target": "html",
+    "declares_contract": "renderer-contract-v1"
+  },
+  "inputs": {
+    "design_intent": { "id": "intent-123", "version": "1.0.0", "checksum": "sha256:abc123" },
+    "visual_constitution": { "id": "vc-core", "version": "1.0.0" }
+  },
+  "outputs": {
+    "artifact": { "format": "html", "uri": "dist/render.html", "checksum": "sha256:def456" },
+    "token_usage": { "declared": ["color.primary", "color.background"], "undeclared": [] },
+    "pattern_usage": { "declared": ["hero.section", "cta.button", "unknown.pattern"] },
+    "constitution": { "violations": [] },
+    "determinism": { "deterministic": true, "markers": [] }
+  },
+  "taste": {
+    "typography": {
+      "roles": [
+        { "role": "display", "size": 56 },
+        { "role": "heading", "size": 36 },
+        { "role": "body", "size": 22 },
+        { "role": "overline", "size": 12 },
+        { "role": "caption", "size": 10 }
+      ]
+    },
+    "spacing": { "values": [4, 10, 32] },
+    "color": {
+      "tokens": ["color.primary", "color.random"],
+      "contrast": [
+        { "pair": "primary_on_background", "ratio": 3.0 },
+        { "pair": "secondary_on_background", "ratio": 4.0 }
+      ]
+    },
+    "density": { "interactions_per_view": 10 },
+    "consistency": {
+      "radius": [2, 20],
+      "elevation": [3],
+      "motion": ["macro", "chaotic"]
+    },
+    "patterns": {
+      "usage": [
+        { "pattern": "hero.section", "intent": "checkout" },
+        { "pattern": "unknown.pattern", "intent": "landing" }
+      ]
+    }
+  }
+}
