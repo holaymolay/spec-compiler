@@ -1,4 +1,4 @@
-project_name: "spec-compiler-framework"
+project_name: "cef-spec-compiler"
 one_sentence_value_prop: "Deterministic CLI pipeline that converts raw human intent into governed specification artifacts."
 audience:
   include:
@@ -30,7 +30,7 @@ repo_map:
   - path: "README.md"
     description: "Start here; links into docs/usage.md for full pipeline walkthrough."
   - path: "README_SPEC.yaml"
-    description: "Authoritative input for README generation via readme-spec-engine."
+    description: "Authoritative input for README generation via cef-readme-spec-engine."
   - path: "src/"
     description: "TypeScript sources for the compiler stages and CLI entrypoint."
   - path: "config/framework.yaml"
@@ -70,7 +70,7 @@ repo_map:
   - path: "package.json"
     description: "Project metadata, scripts, and runtime dependencies."
   - path: "spec/"
-    description: "README generation templates (sections, rules, tone) for readme-spec-engine."
+    description: "README generation templates (sections, rules, tone) for cef-readme-spec-engine."
   - path: "docs/usage.md"
     description: "Step-by-step instructions for running the compiler pipeline and interpreting artifacts."
 non_goals:

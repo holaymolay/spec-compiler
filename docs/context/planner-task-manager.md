@@ -22,7 +22,7 @@
 - Status: completed (2025-12-24T23:42:32-08:00)
 
 ## 2025-12-24 — GitHub publication
-- Summary: Prepare and publish the framework to GitHub (`holaymolay/spec-compiler-framework`).
+- Summary: Prepare and publish the framework to GitHub (`holaymolay/cef-spec-compiler`).
 - Details:
   - Initialize git repository, stage files, and push to new remote.
 - Related Spec / Skill: n/a
@@ -31,10 +31,10 @@
 - Status: completed (2025-12-24T23:47:36-08:00)
 
 ## 2025-12-24 — README generation
-- Summary: Generate README.md deterministically via readme-spec-engine.
+- Summary: Generate README.md deterministically via cef-readme-spec-engine.
 - Details:
-  - Authored README_SPEC.yaml and vendored default readme-spec-engine spec files.
-  - Generated and validated README.md using readme-spec-engine tooling.
+  - Authored README_SPEC.yaml and vendored default cef-readme-spec-engine spec files.
+  - Generated and validated README.md using cef-readme-spec-engine tooling.
 - Related Spec / Skill: n/a
 - Pending Actions:
   - None.

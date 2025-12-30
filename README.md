@@ -1,4 +1,6 @@
-# spec-compiler-framework
+# CEF Spec Compiler
+Part of the Context Engineering Framework (CEF). Umbrella repo: [context-engineering-framework](https://github.com/holaymolay/cef-governance-orchestrator).
+
 
 ## Why This Exists
 
@@ -53,7 +55,7 @@ Run these steps:
 | Path | Description | Exists |
 | --- | --- | --- |
 | README.md | Start here; links into docs/usage.md for full pipeline walkthrough. | yes |
-| README_SPEC.yaml | Authoritative input for README generation via readme-spec-engine. | yes |
+| README_SPEC.yaml | Authoritative input for README generation via cef-readme-spec-engine. | yes |
 | src/ | TypeScript sources for the compiler stages and CLI entrypoint. | yes |
 | config/framework.yaml | Framework concepts, synchronizations, and security defaults. | yes |
 | config/renderer-registry.json | Renderer registry declaring approved renderers and targets. | yes |
@@ -73,7 +75,7 @@ Run these steps:
 | CHANGELOG.md | Changelog entries per completed task. | yes |
 | tsconfig.json | TypeScript compiler settings for the CLI. | yes |
 | package.json | Project metadata, scripts, and runtime dependencies. | yes |
-| spec/ | README generation templates (sections, rules, tone) for readme-spec-engine. | yes |
+| spec/ | README generation templates (sections, rules, tone) for cef-readme-spec-engine. | yes |
 | docs/usage.md | Step-by-step instructions for running the compiler pipeline and interpreting artifacts. | yes |
 
 ## Non-Goals
