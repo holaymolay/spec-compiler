@@ -100,3 +100,6 @@ Hard constraints:
 - Tone profile: neutral
 ## Hub schemas
 - Consume CERES hub schemas for Objective Contract, Gap Ledger, Task Plan, Completed entry, and Prompt Debug Report (`schemas/` in the hub). Align generated specs to these artifacts.
+
+## Hub schema sync
+- Use hub `scripts/sync-schemas.sh <target-repo>` to copy Objective Contract, Gap Ledger, Task Plan, Completed entry, Prompt Debug Report schemas into this repo when needed.
