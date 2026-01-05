@@ -58,3 +58,5 @@
 - Pending Actions:
   - None.
 - Status: completed (2025-12-25T00:03:14-08:00)
+
+- Use CERES todo template: initialize via umbrella `scripts/init-todo-files.sh` (todo-inbox.md, todo.md, completed.md, handover.md); governance gate may enforce `--require-ceres-todo`.
