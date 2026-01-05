@@ -98,3 +98,5 @@ Hard constraints:
 - Max length: 5200 chars
 - Banned terms: magic, automagic
 - Tone profile: neutral
+## Hub schemas
+- Consume CERES hub schemas for Objective Contract, Gap Ledger, Task Plan, Completed entry, and Prompt Debug Report (`schemas/` in the hub). Align generated specs to these artifacts.
