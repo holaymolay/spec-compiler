@@ -103,3 +103,6 @@ Hard constraints:
 
 ## Hub schema sync
 - Use hub `scripts/sync-schemas.sh <target-repo>` to copy Objective Contract, Gap Ledger, Task Plan, Completed entry, Prompt Debug Report schemas into this repo when needed.
+
+## Observability (local)
+- Use  to emit stage events via hub .
